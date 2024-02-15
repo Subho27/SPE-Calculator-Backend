@@ -1,0 +1,7 @@
+all:
+  hosts:
+    aws_ubuntu_server:
+      ansible_host: 13.60.29.215
+      ansible_user: ubuntu
+
+
