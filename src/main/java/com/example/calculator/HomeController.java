@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/calculator")
-@CrossOrigin(origins = "http://16.171.181.71:8084")
 public class HomeController {
 
     @GetMapping("/square-root")
