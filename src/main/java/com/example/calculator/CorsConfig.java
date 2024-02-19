@@ -1,4 +1,5 @@
 package com.example.calculator;
+
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -20,7 +21,7 @@ public class CorsConfig {
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
-        source.registerCorsConfiguration("/", config);
+        source.registerCorsConfiguration("/**", config); // Update mapping to apply CORS globally
         return new CorsFilter(source);
-    }
+    }
 }
