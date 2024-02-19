@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/calculator")
 public class HomeController {
 
-    @GetMapping("/square-root")
-    public double calculateSquareRoot(@RequestParam double number) {
+    @GetMapping("/square-root/{number}")
+    public double calculateSquareRoot(@PathVariable double number) {
         return Math.sqrt(number);
     }
 
-    @GetMapping("/factorial")
-    public long calculateFactorial(@RequestParam int number) {
+    @GetMapping("/factorial/{number}")
+    public long calculateFactorial(@PathVariable int number) {
         long factorial = 1;
         for (int i = 1; i <= number; i++) {
             factorial *= i;
@@ -20,14 +20,14 @@ public class HomeController {
         return factorial;
     }
 
-    @GetMapping("/natural-log")
-    public double calculateNaturalLog(@RequestParam double number) {
+    @GetMapping("/natural-log/{number}")
+    public double calculateNaturalLog(@PathVariable double number) {
         return Math.log(number);
     }
 
     @GetMapping("/power")
-    public double calculatePower(@RequestParam double base, @RequestParam double exponent) {
-        return Math.pow(base, exponent);
+    public double calculatePower(@RequestParam double number, @RequestParam double exponent) {
+        return Math.pow(number, exponent);
     }
 }
 
