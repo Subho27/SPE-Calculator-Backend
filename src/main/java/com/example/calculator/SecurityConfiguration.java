@@ -1,4 +1,5 @@
 package com.example.calculator;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -8,7 +9,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration{
+public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -17,5 +18,5 @@ public class SecurityConfiguration{
                 .cors(AbstractHttpConfigurer::disable);
 
         return http.build();
-    }
+    }
 }
